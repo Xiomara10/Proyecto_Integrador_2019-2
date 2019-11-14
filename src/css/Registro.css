@@ -1,0 +1,26 @@
+body{
+    background: darkorange;
+}
+#contenedor{
+    width:600px;
+    background:#e6e6e6;
+    box-shadow:0 0 40px -10px #000;
+    margin:70px auto;
+    padding:20px 30px;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+    position:relative}
+
+.form-group {
+    margin-top: 10px;
+    margin-bottom: 5px; 
+}
+
+#contenedor input{
+    align-content: flex-end;
+}
+
+h2{
+    text-align: center;
+}
+

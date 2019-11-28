@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from './Card'
 
 import '../css/employee.css'
 
@@ -77,25 +78,21 @@ const employee = [
     }
 ]
 
-const Employee = ({ match }) => {
 
-    const currentEmployment = employee.filter(emp => emp.id === parseInt(match.params.id)) [0]
+const CardGrid= () => (
+    <div className="ed-grid m-grid-3 margin-employee">
+        { employee.map (emp => (
+           <Card
+            key={emp.id} 
+            id={emp.id}
+            src={emp.src}
+            name={emp.name}
+            district={emp.district}
+            employment={emp.employment}
+            url={emp.url}
+            />
+        ))}
+    </div>
+)
 
-    return (
-        <div className="ed-grid m-grid-3 margin-employee">
-            <h1 className="m-cols-3">{currentEmployment.name}</h1>
-            <img className="m-cols-1" src="../css/people1.jpg" alt="" />
-            <div className="m-cols-2">
-                <h4 >Información</h4>
-                <p>{`Oficio: ${currentEmployment.employment}`}</p>
-                <p >{`Distrito: ${currentEmployment.district}`}</p>
-            </div>
-            <div className="m-cols-2">
-                <h3 >Descripción</h3>
-                <p >{currentEmployment.description}</p>
-            </div>
-        </div>
-    )
-}
-
-export default Employee
+export default CardGrid

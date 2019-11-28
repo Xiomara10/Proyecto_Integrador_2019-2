@@ -4,11 +4,12 @@ import RegistroEmpleados from './RegistroEmpleado'
 import Employee from './components/Employee'
 import Menu from './components/Menu'
 import Banner from './components/Banner'
-import CardEmployed from './CardGrid'
+import CardGrid from './components/CardGrid'
 import 'bootstrap/dist/css/bootstrap.css'
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import './styles/styles.scss'
-import CardGrid from './CardGrid'
+import Footer from './components/Footer'
+
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
 
 const App = () => (
   <Router> 
@@ -17,7 +18,7 @@ const App = () => (
       <Route path="/" exact component={ Banner }/>
       <Route path="/login" component={ Login } />
       <Route path="/registro" component={ RegistroEmpleados } />
-      <Route path="/trabajadores/:id" component={ Employee } />
+      <PrivaRoute path="/trabajadores/:id" component={ Employee } />
       <Route path="/trabajadores" component={ CardGrid } />
       <Route component={() => (
         <div>
@@ -26,6 +27,7 @@ const App = () => (
         </div>
       )}/>
     </Switch>
+    <Footer/>
   </Router>
 )
 

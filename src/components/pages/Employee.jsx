@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../css/employee.css'
+import '../../css/employee.css'
 
 const employee = [
     {

@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './css/Registro.css'
+import '../../css/Registro.css'
 
-class RegistroEmpleado extends React.Component{
+class Registro extends React.Component{
     
     constructor(props){
         super(props)
@@ -25,6 +25,7 @@ class RegistroEmpleado extends React.Component{
 
     render(){
         return(
+        <div>
             <div className="container" id="contenedor">
                 <form method="POST" className="register-form" onSubmit={this.save.bind(this)}>
                     <h2>Registrarse</h2>
@@ -85,8 +86,9 @@ class RegistroEmpleado extends React.Component{
                     </div>
                 </form>
             </div>
+        </div>
         )
     }
 }
 
-export default RegistroEmpleado;
+export default Registro;

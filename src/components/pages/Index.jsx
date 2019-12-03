@@ -1,7 +1,7 @@
 import React from 'react'
-import '../css/index.css'
+import '../../css/index.css'
 
-const Banner = () => (
+const Index = () => (
     <>
     <div class="main-banner img-container third-color" id="main-banner">
         <div class="ed-grid lg-grid-6">
@@ -35,4 +35,4 @@ const Banner = () => (
     </>
 )
 
-export default Banner
+export default Index

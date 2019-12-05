@@ -2,7 +2,7 @@ import React from 'react'
 import Login from './components/pages/Login'
 import Registro from './components/pages/Registro'
 import Employee from './components/pages/Employee'
-import Menu from './components/Menu'
+import Header from './components/Header'
 import Index from './components/pages/Index'
 import CardGrid from './components/pages/CardGrid'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -16,7 +16,7 @@ import Page404 from './components/pages/Page404'
 
 const App = () => (
   <Router> 
-    <Menu />
+    <Header />
     <Switch>
       <Public path="/" exact component={ Index }/>
       <Public path="/login" exact component={ Login } />

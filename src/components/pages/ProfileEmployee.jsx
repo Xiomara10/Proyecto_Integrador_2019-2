@@ -77,7 +77,7 @@ const employee = [
     }
 ]
 
-const Employee = ({ match }) => {
+const ProfileEmployee = ({ match }) => {
 
     const currentEmployment = employee.filter(emp => emp.id === parseInt(match.params.id)) [0]
 
@@ -98,4 +98,4 @@ const Employee = ({ match }) => {
     )
 }
 
-export default Employee
+export default ProfileEmployee

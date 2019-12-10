@@ -22,6 +22,13 @@ class Employees extends Component {
         })
     }
 
+    /*
+    componentDidMount(){
+        axios.get('https://localhost:8085/empleados')
+        .then( response => console.log(response))
+    }
+    */
+
     render() {
         const {employees} = this.state
         return(

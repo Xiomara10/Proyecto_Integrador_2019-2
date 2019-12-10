@@ -8,14 +8,14 @@ class Registro extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            name: '',
-            lastname: '',
-            genero: '',
+            nombre: '',
+            apellido: '',
+            correo: '',
             dni:'',
             direccion: '',
-            email: '',
+            celular: '',
+            sexo: '',
             contraseña: '',
-            contraseña2: '',
         }
     }
 
@@ -25,13 +25,15 @@ class Registro extends React.Component{
         //this.props.history.push('/login')
 
         const data = {
-            "name": form.name.value,
-            "lastname": form.lastname.value ,
-            "genero": form.genero.value,
+            "nombre": form.nombre.value,
+            "apellido": form.apellido.value ,
+            "correo": form.correo.value,
             "dni":form.dni.value,
             "direccion": form.direccion.value,
-            "email": form.direccion.value,
-            "contraseña": form.contraseña.value 
+            "genero": form.genero.value,
+            "celular": form.celular.value,
+            "sexo": form.sexo.value,
+            "contraseña": form.contraseña.value,
         }
 
         Axios.post('', data)
@@ -53,22 +55,17 @@ class Registro extends React.Component{
                     <div className="col">
                         <div className="form__item">
                         <label>Nombres </label>
-                        <input type="text" name="name" id="name" 
+                        <input type="text" name="nombre" id="nombre" 
                             className="form-control" required/>
                         </div>
                         <div className="form__item">
-                        <label >Apellidos </label>
-                        <input type="text" name="lastname" id="lastname" 
+                        <label >Apellido </label>
+                        <input type="text" name="apellido" id="apellido" 
                             className="form-control" required/>
                         </div>
-                            <label>Genero</label>
-                            <div className="form-check"> 
-                                <input className="form-check-input" type="radio" name="genero" value="f"/>
-                                <label className="form-check-label">Femenino </label>
-                            </div>
-                            <div className="form-check"> 
-                                <input className="form-check-input" type="radio" name="genero" value="m"/>
-                                <label className="form-check-label">Masculino </label>
+                        <div className="form__item">
+                        <label>Género</label>
+                        <input type="text" name="sexo" id="sexo" className="form-control" required />
                         </div>
                         <div className="form__item">
                         <label>DNI </label>
@@ -80,7 +77,7 @@ class Registro extends React.Component{
                     <div className="col">
                         <div className="form__item">
                         <label>Email </label>
-                        <input type="email" name="email" id="email" className="form-control" required/>      
+                        <input type="email" name="correo" id="correo" className="form-control" required/>      
                         </div>
                         <div className="form__item">
                         <label>Contraseña </label>

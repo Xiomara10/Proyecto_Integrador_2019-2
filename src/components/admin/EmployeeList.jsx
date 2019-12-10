@@ -1,5 +1,4 @@
 import React from 'react'
-import EmployeeLista from './EmployeeLista'
 import 'bootstrap/dist/css/bootstrap.css'
 
 class EmployeeList extends React.Component {
@@ -13,7 +12,7 @@ class EmployeeList extends React.Component {
     }
     
     componentDidMount(){
-        fetch('http://localhost:8085/empleados', {method: 'get'})
+        fetch('http://localhost:8085/administrador/empleados', {method: 'get'})
         .then(respuesta => respuesta.json())
         .then( respuesta2 => {
             this.setState({
@@ -22,13 +21,14 @@ class EmployeeList extends React.Component {
         })
     }
 
-    removeEmployee (idEmpleado) {
-        fetch (`http://localhost:3000/${idEmpleado}`, {
+    removeEmployee (idempleado) {
+        console.log("idempleado: " + idempleado);
+        fetch (`http://localhost:8085/administrador/delete/${idempleado}`, {
           method: 'DELETE'})
         .then(res => res.json())
         .then(res => {
           if (res.success) {
-            let employees = this.state.employees.filter(c => c.idEmpleado !== idEmpleado);
+            let employees = this.state.employees.filter(c => c.idempleado !== idempleado);
             this.setState({ employees });
             alert('Empleado eliminado');
           }
@@ -37,6 +37,25 @@ class EmployeeList extends React.Component {
 
     editEmployee(idEmpleado) {
         fetch('', {method: 'GET'})
+    }
+
+    EmployeeLista = ({ idempleado, nombre, apellido, sexo, dni, correo, celular}) => {
+
+        return(
+            <tbody>
+                <tr>
+                    <td scope="row">{ idempleado }</td>
+                    <td>{ nombre }</td>
+                    <td>{ apellido }</td>
+                    <td>{ sexo }</td>
+                    <td>{ dni }</td>
+                    <td>{ correo }</td>
+                    <td>{ celular }</td>
+                    <td><button type="button" className="btn btn-info">Editar</button></td>
+                    <td><button type="button" className="btn btn-danger" onClick={this.removeEmployee.bind(this,idempleado)}>Eliminar</button></td>
+                </tr>
+            </tbody>
+        )
     }
 
     render() {
@@ -58,9 +77,9 @@ class EmployeeList extends React.Component {
                 </tr>
                 </thead>
                 { employees.map (emp => (
-                    <EmployeeLista
+                    <this.EmployeeLista
                     key={emp.id} 
-                    idEmpleado={emp.idEmpleado}
+                    idempleado={emp.idempleado}
                     nombre={emp.nombre}
                     apellido={emp.apellido}
                     sexo={emp.sexo}

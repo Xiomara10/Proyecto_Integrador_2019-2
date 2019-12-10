@@ -16,7 +16,6 @@ class Login extends React.Component {
     submitForm(e){
         e.preventDefault();
         const form = e.target
-    
         const data = {
             "correo": form.correo.value,
             "contraseña": form.contraseña.value
@@ -28,17 +27,17 @@ class Login extends React.Component {
             window.location = "/"
         })
         .catch(e => console.log(e.response))
+
+        // fetch('http://localhost:8085/auth/login', {method:'post', body: JSON.stringify(data), headers:{
+        // 'Content-Type': 'application/json'}})
+        // .then(res => res.json())
+        // .catch(error => console.error('Error:', error))
+        // .then(response => console.log('Success:', response));
     }
 
     onChange(e){
         this.setState({[e.target.name]: e.target.value})
     }
-
-    // fetch('http://localhost:8085/auth/login', {method:'post', body: JSON.stringify(data), headers:{
-    //     'Content-Type': 'application/json'}})
-    // .then(res => res.json())
-    // .catch(error => console.error('Error:', error))
-    // .then(response => console.log('Success:', response));
 
     render (){
 

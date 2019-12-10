@@ -24,11 +24,11 @@ const App = () => (
   <Router> 
     <Header />
     <Switch>
-      <Public path="/" exact component={ Index }/>
+      <Route path="/" exact component={ Index }/>
       <Public path="/login" exact component={ Login } />
       <Public path="/registro" exact component={ Registro } />
       <Protected path="/trabajadores/:id" component={ Employee } />
-      <Public path="/trabajadores" exact component={ CardGrid } />
+      <Route path="/trabajadores" exact component={ CardGrid } />
       //rutas del admin
       <Admin path="/admin" exact component={AdminHome}/>
       <Admin path="/admin/trabajadores" exact component={ EmployeesList }/>

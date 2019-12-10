@@ -37,7 +37,7 @@ class Employees extends Component {
                 { employees.map (emp => (
                     <Card
                     key={emp.id} 
-                    idEmpleado={emp.idEmpleado}
+                    idempleado={emp.idempleado}
                     src={emp.src}
                     apellido={emp.apellido}
                     correo={emp.correo}
